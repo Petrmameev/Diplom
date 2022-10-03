@@ -19,11 +19,11 @@ public class CreditPage {
     private SelenideElement errorRejected = Selenide.$x("//div[text()='Ошибка! Банк отказал в проведении операции.']]");
     private SelenideElement success = Selenide.$x("//div[text()='Успешно']");
 
-    public CreditPage(){
+    public CreditPage() {
         heading.shouldBe(visible);
     }
 
-    public void insertPayCreditCardData(DataHelper.CardInfo cardInfo){
+    public void insertPayCreditCardData(DataHelper.CardInfo cardInfo) {
         cardNumber.setValue(cardInfo.getCardNumber());
         month.setValue(cardInfo.getMonth());
         year.setValue(cardInfo.getYear());
@@ -31,11 +31,12 @@ public class CreditPage {
         cvc.setValue(cardInfo.getCvc());
         proceedButton.click();
     }
-    public void errorRejectedFromBank(){
+
+    public void errorRejectedFromBank() {
         errorRejected.shouldBe(visible, Duration.ofSeconds(15));
     }
 
-    public void successFromBank(){
+    public void successFromBank() {
         success.shouldBe(visible, Duration.ofSeconds(15));
     }
 
