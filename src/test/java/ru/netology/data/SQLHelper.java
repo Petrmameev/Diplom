@@ -33,6 +33,18 @@ public class SQLHelper {
         return null;
     }
 
+    public static DataHelper.CreditCardData getCreditCardData() {
+        var cardDataSQL = "SELECT * FROM credit_request_entity ORDER BY created DESC LIMIT 1";
+        try (var conn = getConn()) {
+            var result = runner.query(conn, cardDataSQL,
+                    new BeanHandler<>(DataHelper.CreditCardData.class));
+            return result;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return null;
+    }
+
     @SneakyThrows
     public static void cleanDatabase() {
         var conn = getConn();
