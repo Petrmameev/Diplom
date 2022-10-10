@@ -47,6 +47,23 @@ public class DataHelper {
         return new CardInfo(randomCardNumber, getCurrentMonth(), getCurrentYear(), randomName, randomCvc);
     }
 
+    public static CardInfo approvedCardWithParametrizedMonthAndYear(String month, String year) {
+        var randomName = faker.name().fullName();
+        var randomCVC = faker.number().digits(3);
+        return new CardInfo(numberApprovedCard, month, year, randomName, randomCVC);
+    }
+
+    public static CardInfo generatedDataWithParametrizedLengthOwner(int length) {
+        var randomName = faker.lorem().fixedString(length);
+        var randomCVC = faker.number().digits(3);
+        return new CardInfo(numberApprovedCard, getCurrentMonth(), String.valueOf(validYear), randomName, randomCVC);
+    }
+
+    public static CardInfo generatedDataWithParametrizedOwnerName(String name) {
+        var randomCVC = faker.number().digits(3);
+        return new CardInfo(numberApprovedCard, getCurrentMonth(), String.valueOf(validYear), name, randomCVC);
+    }
+
 
     @Value
     public static class CardInfo {
