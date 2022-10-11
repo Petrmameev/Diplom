@@ -14,7 +14,6 @@ import static com.codeborne.selenide.Condition.visible;
 
 public class PayPage {
     private SelenideElement heading = Selenide.$x("//h3[text()='Оплата по карте']");
-
     private SelenideElement cardNumber = Selenide.$x("//span[text()='Номер карты']/following-sibling::span/input");
     private SelenideElement month = Selenide.$x("//span[text()='Месяц']/following-sibling::span/input");
     private SelenideElement year = Selenide.$x("//span[text()='Год']/following-sibling::span/input");

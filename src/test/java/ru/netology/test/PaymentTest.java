@@ -34,14 +34,14 @@ public class PaymentTest {
         payPage.successFromBank();
     }
 
-//    @Test
-//    void shouldDeclineTransactionWithPaymentCard(){
-//        mainPage.payPage();
-//        var cardInfo = DataHelper.generatedDataWithDeclinedCard();
-//        var payPage = new PayPage();
-//        payPage.insertPayCardData(cardInfo);
-//        payPage.errorRejectedFromBank();
-//    }
+    @Test
+    void shouldDeclineTransactionWithPaymentCard(){
+        mainPage.payPage();
+        var cardInfo = DataHelper.generatedDataWithDeclinedCard();
+        var payPage = new PayPage();
+        payPage.insertPayCardData(cardInfo);
+        payPage.errorRejectedFromBank();
+    }
 
     @Test
     void shouldDeclineTransactionWithRandomNumberCard() {
