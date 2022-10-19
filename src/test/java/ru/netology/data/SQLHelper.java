@@ -15,11 +15,18 @@ public class SQLHelper {
     private SQLHelper() {
     }
 
-
-    @SneakyThrows
-    private static Connection getConn() {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass");
+    public static Connection getConn() throws SQLException {
+        var url = System.getProperty("db.url");
+        var user = System.getProperty("db.user");
+        var password = System.getProperty("db.password");
+        try {
+            return DriverManager.getConnection(url, user, password);
+        } catch (SQLException err){
+            err.printStackTrace();
+        }
+        return null;
     }
+
 
     public static DataHelper.PaymentCardData getPaymentCardData() {
         var cardDataSQL = "SELECT * FROM payment_entity ORDER BY created DESC LIMIT 1";
