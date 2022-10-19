@@ -21,6 +21,9 @@
 *Отчет при конфигурации с базой данных PostgreSQL:*
 ![Screenshot_Postgres](https://user-images.githubusercontent.com/103646573/196031497-d66bd978-4aaf-4239-93e1-142829faf9c9.jpg)
 
+#### Отчет по результатам тестирования Allure:
+
+![Allure](https://user-images.githubusercontent.com/103646573/196732082-d52e4a59-e0ae-4ad5-ac23-88c7136003c6.jpg)
 
 ### Общие рекомендации
 
